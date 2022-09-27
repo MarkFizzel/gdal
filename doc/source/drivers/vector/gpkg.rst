@@ -504,6 +504,12 @@ Examples
         -sql "SELECT poly.id, other.foo FROM poly JOIN other_schema.other USING (id)" \
         -oo PRELUDE_STATEMENTS="ATTACH DATABASE 'other.gpkg' AS other_schema"
 
+- Create shapefile from oracle database:
+
+    ::
+
+      ogr2ogr -f "ESRI Shapefile" C:\path\to\shapefile.shp OCI:db_user/db_password@//db_host:db_port/db_database -sql "SELECT * FROM SCHEMA.TABEL" -progress
+
 See Also
 --------
 
